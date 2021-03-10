@@ -28,5 +28,8 @@ pip-selfcheck.json
 
 # Ignore cache files
 *.py[cod]
+*.ini 
+
+migrations/*
 
 # End of https://www.toptal.com/developers/gitignore/api/virtualenv,visualstudiocode
