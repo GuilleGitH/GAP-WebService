@@ -6,7 +6,7 @@ from flask_script import Manager
 
 from src import blueprint
 from src.main import create_app, db
-from app.main.model import user
+from src.main.model import sowing_form
 
 app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
 app.register_blueprint(blueprint)
