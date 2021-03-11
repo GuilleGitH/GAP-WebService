@@ -2,7 +2,7 @@ import uuid
 import datetime
 
 from src.main import db
-from src.main.model.sowing_form import SowingForm
+from src.main.model.issue_form import IssueForm
 
 
 def save_new_user(data):
