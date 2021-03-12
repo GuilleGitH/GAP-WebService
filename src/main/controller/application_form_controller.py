@@ -17,7 +17,7 @@ class ApplicationForm(Resource):
     def post(self):
         """Predicts entire form based on form received"""
         data = request.json
-        return complete_prediction()
+        return complete_prediction("all")
 
 
 @api.route('/field_based')
@@ -27,5 +27,5 @@ class ApplicationForm(Resource):
     @api.expect(_application_form_field_based, validate=True)
     def post(self):
         """Predicts specific fields based on form received"""
-        data = request.jsons
-        return null
+        data = request.json
+        return complete_prediction(data['field_required'])

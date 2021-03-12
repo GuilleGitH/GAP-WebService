@@ -20,12 +20,12 @@ class HarvestingForm(Resource):
         return complete_prediction()
 
 
-@api.route('/field_based')
+@api.route('/field_based') 
 class HarvestingForm(Resource):
     @api.response(200, 'Prediction complete.')
     @api.doc('make sowing form prediction on specific fields')
     @api.expect(_harvesting_form_field_based, validate=True)
     def post(self):
         """Predicts specific fields based on form received"""
-        data = request.jsons
-        return null
+        data = request.json
+        return complete_prediction(data['field_required'])

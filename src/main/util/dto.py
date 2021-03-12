@@ -18,7 +18,7 @@ class SowingFormDto:
 
     sowing_form_field_based = api.model('sowing_form_field_based', {
         'sowing_form': fields.Nested(sowing_form, required=True),
-        'fields_required': fields.List(fields.Integer, default=None, required=True, description="fields to make predictions on"), })
+        'field_required': fields.String(default=None, required=True, description="fields to make predictions on"), })
 
 
 class HarvestingFormDto:
@@ -35,7 +35,7 @@ class HarvestingFormDto:
 
     harvesting_form_field_based = api.model('harvesting_form_field_based', {
         'harvesting_form': fields.Nested(harvesting_form, required=True),
-        'fields_required': fields.List(fields.Integer, default=None, required=True, description="fields to make predictions on"), })
+        'field_required': fields.String(default=None, required=True, description="fields to make predictions on"), })
 
 
 class IssueFormDto:
@@ -52,7 +52,7 @@ class IssueFormDto:
 
     issue_form_field_based = api.model('issue_form_field_based', {
         'issue_form': fields.Nested(issue_form, required=True),
-        'fields_required': fields.List(fields.Integer, default=None, required=True, description="fields to make predictions on"), })
+        'field_required': fields.String(default=None, required=True, description="fields to make predictions on"), })
 
 
 class ApplicationFormDto:
@@ -72,4 +72,4 @@ class ApplicationFormDto:
 
     application_form_field_based = api.model('application_form_field_based', {
         'application_form': fields.Nested(application_form, required=True),
-        'fields_required': fields.List(fields.Integer, default=None, required=True, description="fields to make predictions on"), })
+        'field_required': fields.String(default=None, required=True, description="fields to make predictions on"), })
