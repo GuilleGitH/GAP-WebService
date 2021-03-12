@@ -11,9 +11,9 @@ class HarvestForm(Form):
     def makePrediction(self, field):
 
         switcher = {
-            'type': self.predictor.predict_quantity_kg,
+            'quantity': self.predictor.predict_quantity_kg,
             'quantity_other_unit': self.predictor.predict_quantity_other_unit,
             'all': self.predictor.predict_complete_form
         }
         func = switcher.get(field, lambda: "Invalid month")
-        return func
+        return func()
