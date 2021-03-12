@@ -13,22 +13,7 @@ class HarvestForm(Form):
         switcher = {
             'type': self.predictor.predict_quantity_kg,
             'quantity_other_unit': self.predictor.predict_quantity_other_unit,
-
+            'all': self.predictor.predict_complete_form
         }
         func = switcher.get(field, lambda: "Invalid month")
-
-        response = {
-            'status': 'prediction completed',
-            'predicted_form': {
-                'date': {
-                    'pred1': 'pred1 - chance',
-                    'pred2': 'pred2 - chance',
-                },
-                'time': 'self.time',
-                'plot': 'self.plot',
-                'note': 'self.note',
-                'quantity': 'self.quantity',
-                'harvest_quantity': 'self.harvest_quantity',
-            }
-        }
         return func

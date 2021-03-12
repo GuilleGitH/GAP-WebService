@@ -12,32 +12,13 @@ class SowingForm(Form):
         self.predictor = SowingFormPredictor()
 
     def makePrediction(self, field):
-
         switcher = {
             'crop': self.predictor.predict_crop,
             'quantity': self.predictor.predict_quantity,
             'time_to_harvest': self.predictor.predict_time_to_harvest,
             'harvest_duration': self.predictor.predict_harvest_duration,
             'expected_yield': self.predictor.predict_expected_yield,
-
+            'all': self.predictor.predict_complete_form
         }
         func = switcher.get(field, lambda: "Invalid month")
-
-        response = {
-            'status': 'prediction completed',
-            'predicted_form': {
-                'date': {
-                    'pred1': 'pred1 - chance',
-                    'pred2': 'pred2 - chance',
-                },
-                'time': 'self.time',
-                'plot': 'self.plot',
-                'note': 'self.note',
-                'crop': 'self.crop',
-                'quantity': 'self.quantity',
-                'time_to_harvest': 'self.time_to_harvest',
-                'harvest_duration': 'self.harvest_duration',
-                'expected_yield': 'self.expected_yield',
-            } 
-        }
         return func()

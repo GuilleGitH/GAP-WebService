@@ -17,7 +17,7 @@ class HarvestingForm(Resource):
     def post(self):
         """Predicts entire form based on form received"""
         data = request.json
-        return complete_prediction()
+        return complete_prediction("all")
 
 
 @api.route('/field_based') 

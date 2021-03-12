@@ -23,3 +23,20 @@ class IssueFormPredictor(FormPredictor):
             ]
         }
         return prediction
+
+    def predict_complete_form(self):
+        prediction = {
+            'status': 'prediction completed',
+            'predicted_form': {
+                'date': {
+                    'pred1': 'pred1 - chance',
+                    'pred2': 'pred2 - chance',
+                },
+                'time': 'self.time',
+                'plot': 'self.plot',
+                'note': 'self.note',
+                'issue_type': 'self.issue_type',
+                'description': 'self.description',
+            }
+        }
+        return prediction

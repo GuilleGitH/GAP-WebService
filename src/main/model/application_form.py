@@ -14,30 +14,13 @@ class ApplicationForm(Form):
         self.predictor = ApplicationFormPredictor()
 
     def makePrediction(self, field): 
-
         switcher = {
             'product': self.predictor.predict_product,
             'dose': self.predictor.predict_dose,
             'machine': self.predictor.predict_machine,
             'quantity': self.predictor.predict_quantity,
-
+            'all': self.predictor.predict_complete_form
         }
         func = switcher.get(field, lambda: "Invalid month")
 
-        response = {
-            'status': 'prediction completed',
-            'predicted_form': {
-                'date': {
-                    'pred1': 'pred1 - chance',
-                    'pred2': 'pred2 - chance',
-                },
-                'time': 'self.time',
-                'plot': 'self.plot',
-                'note': 'self.note',
-                'product': 'self.product',
-                'quantity': 'self.quantity',
-                'dose': 'self.dose',
-                'machine': 'self.machine',
-            }
-        }
         return func()

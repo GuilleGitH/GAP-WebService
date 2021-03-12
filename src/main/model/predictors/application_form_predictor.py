@@ -3,7 +3,7 @@ from .form_predictor import FormPredictor
 class ApplicationFormPredictor(FormPredictor):
 
     def predict_product(self):
-        prediction = {
+        prediction = { 
             'status': 'prediction for product completed',
             'predicted_products':[
                 {'product': 'Abamectina', 'chance': '90%'},
@@ -43,6 +43,25 @@ class ApplicationFormPredictor(FormPredictor):
                 {'quantity': '3,14', 'chance': '70%'},
                 {'quantity': '2,25', 'chance': '50%'}
             ]
+        }
+        return prediction
+
+    def predict_complete_form(self):
+        prediction = {
+            'status': 'prediction completed',
+            'predicted_form': {
+                'date': {
+                    'pred1': 'pred1 - chance',
+                    'pred2': 'pred2 - chance',
+                },
+                'time': 'self.time',
+                'plot': 'self.plot',
+                'note': 'self.note',
+                'product': 'self.product',
+                'quantity': 'self.quantity',
+                'dose': 'self.dose',
+                'machine': 'self.machine',
+            }
         }
         return prediction
     

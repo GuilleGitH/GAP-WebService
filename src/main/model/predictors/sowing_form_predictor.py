@@ -55,3 +55,23 @@ class SowingFormPredictor(FormPredictor):
             ]
         }
         return prediction
+
+    def predict_complete_form(self):
+        prediction = {
+            'status': 'prediction completed',
+            'predicted_form': {
+                'date': {
+                    'pred1': 'pred1 - chance',
+                    'pred2': 'pred2 - chance',
+                },
+                'time': 'self.time',
+                'plot': 'self.plot',
+                'note': 'self.note',
+                'crop': 'self.crop',
+                'quantity': 'self.quantity',
+                'time_to_harvest': 'self.time_to_harvest',
+                'harvest_duration': 'self.harvest_duration',
+                'expected_yield': 'self.expected_yield',
+            } 
+        }
+        return prediction

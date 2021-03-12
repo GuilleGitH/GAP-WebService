@@ -9,26 +9,10 @@ class IssueForm(Form):
         self.predictor = IssueFormPredictor()
 
     def makePrediction(self, field): 
-
         switcher = {
             'type': self.predictor.predict_type,
             'description': self.predictor.predict_description,
-
+            'all': self.predictor.predict_complete_form
         }
         func = switcher.get(field, lambda: "Invalid month")
-
-        response = {
-            'status': 'prediction completed',
-            'predicted_form': {
-                'date': {
-                    'pred1': 'pred1 - chance',
-                    'pred2': 'pred2 - chance',
-                },
-                'time': 'self.time',
-                'plot': 'self.plot',
-                'note': 'self.note',
-                'issue_type': 'self.issue_type',
-                'description': 'self.description',
-            }
-        }
         return func()
