@@ -5,11 +5,11 @@ class SowingFormDto:
     api = Namespace(
         'sowing_form', description='sowing_form related operations')
     sowing_form = api.model('sowing_form', {
-        'date': fields.String(required=True, description='partial form'),
-        'time': fields.String(required=True, description='partial form'),
-        'plot': fields.String(required=True, description='partial form'),
+        'date': fields.Date(required=True, description='partial form'),
+        'time': fields.DateTime(required=True, description='partial form'),
+        'plot': fields.Integer(required=True, description='partial form'),
         'crop': fields.String(required=True, description='partial form'),
-        'quantity': fields.String(required=True, description='partial form'),
+        'quantity': fields.Integer(required=True, description='partial form'),
         'time_to_harvest': fields.String(required=True, description='partial form'),
         'harvest_duration': fields.String(required=True, description='partial form'),
         'expected_yield': fields.String(required=True, description='partial form'),
@@ -25,10 +25,10 @@ class HarvestingFormDto:
     api = Namespace('harvesting_form',
                     description='harvesting_form related operations')
     harvesting_form = api.model('harvesting_form', {
-        'date': fields.String(required=True, description='partial form'),
-        'time': fields.String(required=True, description='partial form'),
-        'plot': fields.String(required=True, description='partial form'),
-        'quantity': fields.String(required=True, description='partial form'),
+        'date': fields.Date(required=True, description='partial form'),
+        'time': fields.DateTime(required=True, description='partial form'),
+        'plot': fields.Integer(required=True, description='partial form'),
+        'quantity': fields.Integer(required=True, description='partial form'),
         'harvest_quantity': fields.String(required=True, description='partial form'),
         'note': fields.String(required=True, description='partial form'),
     })
@@ -42,10 +42,10 @@ class IssueFormDto:
     api = Namespace('issue_form',
                     description='issue_form related operations')
     issue_form = api.model('issue_form', {
-        'date': fields.String(required=True, description='partial form'),
-        'time': fields.String(required=True, description='partial form'),
-        'plot': fields.String(required=True, description='partial form'),
-        'type': fields.String(required=True, description='partial form'),
+        'date': fields.Date(required=True, description='partial form'),
+        'time': fields.DateTime(required=True, description='partial form'),
+        'plot': fields.Integer(required=True, description='partial form'),
+        'issue_type': fields.Integer(required=True, description='partial form'),
         'description': fields.String(required=True, description='partial form'),
         'note': fields.String(required=True, description='partial form'),
     })
@@ -60,12 +60,12 @@ class ApplicationFormDto:
                     description='application_form related operations')
 
     application_form = api.model('application_form', {
-        'date': fields.String(required=True, description='partial form'),
-        'time': fields.String(required=True, description='partial form'),
-        'plot': fields.String(required=True, description='partial form'),
+        'date': fields.Date(required=True, description='partial form'),
+        'time': fields.DateTime(required=True, description='partial form'),
+        'plot': fields.Integer(required=True, description='partial form'),
         'product': fields.String(required=True, description='partial form'),
-        'quantity': fields.String(required=True, description='partial form'),
-        'dose': fields.String(required=True, description='partial form'),
+        'quantity': fields.Integer(required=True, description='partial form'),
+        'dose': fields.Float(required=True, description='partial form'),
         'machine': fields.String(required=True, description='partial form'),
         'note': fields.String(required=True, description='partial form'),
     })

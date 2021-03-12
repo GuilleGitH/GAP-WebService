@@ -13,7 +13,10 @@ class ApplicationForm(Form):
         response = {
             'status': 'prediction completed',
             'predicted_form': {
-                'date': 'self.date',
+                'date': {
+                    'pred1': 'pred1 - chance',
+                    'pred2': 'pred2 - chance',
+                },
                 'time': 'self.time',
                 'plot': 'self.plot',
                 'note': 'self.note',
@@ -23,5 +26,4 @@ class ApplicationForm(Form):
                 'machine': 'self.machine',
             }
         }
-
         return response

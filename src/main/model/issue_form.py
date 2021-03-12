@@ -6,3 +6,20 @@ class IssueForm(Form):
         super().__init__(date, time, plot, note)
         self.type = issue_type
         self.description = description
+
+    def makePrediction():
+        response = {
+            'status': 'prediction completed',
+            'predicted_form': {
+                'date': {
+                    'pred1': 'pred1 - chance',
+                    'pred2': 'pred2 - chance',
+                },
+                'time': 'self.time',
+                'plot': 'self.plot',
+                'note': 'self.note',
+                'issue_type': 'self.issue_type',
+                'description': 'self.description',
+            }
+        }
+        return response

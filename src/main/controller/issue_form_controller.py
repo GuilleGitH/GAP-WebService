@@ -2,7 +2,7 @@ from flask import request
 from flask_restx import Resource
 
 from ..util.dto import IssueFormDto
-from ..service.sowing_form_service import save_new_user, get_all_users, get_a_user
+from ..service.issue_form_service import complete_prediction
 
 api = IssueFormDto.api
 _issue_form = IssueFormDto.issue_form
@@ -17,7 +17,7 @@ class SowingForm(Resource):
     def post(self):
         """Predicts entire form based on form received"""
         data = request.json
-        return null
+        return complete_prediction()
 
 
 @api.route('/field_based')

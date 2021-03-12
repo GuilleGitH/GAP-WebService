@@ -2,6 +2,7 @@ from flask import request
 from flask_restx import Resource
 
 from ..util.dto import HarvestingFormDto
+from ..service.harvest_form_service import complete_prediction
 
 api = HarvestingFormDto.api
 _harvesting_form = HarvestingFormDto.harvesting_form
@@ -16,7 +17,7 @@ class HarvestingForm(Resource):
     def post(self):
         """Predicts entire form based on form received"""
         data = request.json
-        return null
+        return complete_prediction()
 
 
 @api.route('/field_based')
