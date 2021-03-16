@@ -15,7 +15,7 @@ class IssueFormPredictor(FormPredictor):
 
     def predict_description(self):
         prediction = {
-            'status': 'prediction for product completed',
+            'status': 'prediction for description completed',
             'predicted_description':[
                 {'description': 'arañuela roja', 'chance': '90%'},
                 {'description': 'tuta', 'chance': '70%'},
