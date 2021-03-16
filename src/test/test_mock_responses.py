@@ -23,7 +23,7 @@ def sowing_form(self):
 
 class TestSowingForm(BaseTestCase):
 
-    def test_registered_user_login(self):
+    def test_sowing_form(self):
         """ Test for mock response received for sowing form """
         with self.client:
             # user registration
