@@ -1,0 +1,11 @@
+date,hour,plot,crop,unit,quantity,time_to_harvest,harvest_duration
+13/6/2019,,1,Lechuga Romana,,42000,13/8/2019,
+12/7/2019,,1,Lechuga Romana,,2458,12/9/2019,
+12/7/2019,,1,Lechuga Morada,,4500,12/9/2019,
+12/7/2019,,1,Lechuga Francesa,,16000,12/9/2019,
+27/9/2019,,1,Lechuga Romana,,42000,,
+27/9/2019,,1,Lechuga Francesa,,18200,,
+27/9/2019,,1,Lechuga Morada,,14000,,
+14/10/2019,,1,Lechuga Romana,,34560,,
+31/12/2019,,1,Tomate 2900,,7500,,
+27/7/2020,,1,Zapallito,,9000,,
