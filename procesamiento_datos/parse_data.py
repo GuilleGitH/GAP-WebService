@@ -1,5 +1,12 @@
 import csv
 
+def proccess_variety_serviverde(variety):
+    if( variety == ""):
+        return ""
+    words = variety.split()
+    return words[0]
+
+
 # Abre el archivo csv fuente
 with open('serviverde_merge.csv', mode='r') as csvfile:
     reader = csv.DictReader(csvfile)
@@ -14,5 +21,5 @@ with open('serviverde_merge.csv', mode='r') as csvfile:
         # Escribe por cada fila presente en el csv original
         for row in reader:
             newRow = {'date': row['FECHA'], 'plot': row['LOTE'], 'unit': 'planta', 'quantity': row['CANTIDAD'],
-                      'time_to_harvest': row['fecha de cosecha'], 'crop': row['Variedad']}
+                      'time_to_harvest': row['fecha de cosecha'], 'crop': proccess_variety_serviverde(row['Variedad'])}
             writer.writerow(newRow)
