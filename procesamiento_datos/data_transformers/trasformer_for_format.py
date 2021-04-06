@@ -25,3 +25,18 @@ class trasformer():
                                     'harvest_duration': transformer.value_for_harvest_duration(row),
                                     'expected_yield': transformer.value_for_expected_yield(row)}
                         writer.writerow(newRow)
+
+    def merge_two_csv(self, csv1, csv2, dest):
+        file1 = open(csv1, "r")
+        file2 = open(csv2, "r")
+        file_dest = open(dest, "w")
+
+        for line in file1:
+            file_dest.write(line)
+
+        trap = True
+        for line in file2:
+            if(trap):
+                trap = False
+            else:
+                file_dest.write(line)
