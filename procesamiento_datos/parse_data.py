@@ -6,6 +6,12 @@ def proccess_variety_serviverde(variety):
     words = variety.split()
     return words[0]
 
+def bad_row_treat_serviverde(row):
+    if ((row['Variedad'] == "") or ("°" in row['Variedad'])):
+        return True
+    else:
+        return False
+
 
 # Abre el archivo csv fuente
 with open('serviverde_merge.csv', mode='r') as csvfile:
@@ -20,6 +26,9 @@ with open('serviverde_merge.csv', mode='r') as csvfile:
         writer.writeheader()
         # Escribe por cada fila presente en el csv original
         for row in reader:
-            newRow = {'date': row['FECHA'], 'plot': row['LOTE'], 'unit': 'planta', 'quantity': row['CANTIDAD'],
+            if (not bad_row_treat_serviverde(row)):
+
+                newRow = {'date': row['FECHA'], 'plot': row['LOTE'], 'unit': 'planta', 'quantity': row['CANTIDAD'],
                       'time_to_harvest': row['fecha de cosecha'], 'crop': proccess_variety_serviverde(row['Variedad'])}
-            writer.writerow(newRow)
+                writer.writerow(newRow)
+            
