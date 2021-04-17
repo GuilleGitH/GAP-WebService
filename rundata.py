@@ -5,12 +5,10 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 
 from src import blueprint
-from src.main import create_app, db
-from src.main.model import sowing_form
-
+from src.data import create_data_app, db
 from src.data.model import plot, sow, application, harvest, issue
 
-app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
+app = create_data_app(os.getenv('BOILERPLATE_ENV') or 'dev')
 app.register_blueprint(blueprint)
 
 app.app_context().push()
