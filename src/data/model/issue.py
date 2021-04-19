@@ -16,3 +16,6 @@ class Issue(db.Model):
     plot_id = db.Column(db.Integer, ForeignKey('plot.id'))
     issue_type = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String(255), nullable=False)
+
+    def __repr__(self):
+        return "<User '{}'>".format(self.name)
