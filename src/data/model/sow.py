@@ -17,7 +17,9 @@ class Sow(db.Model):
     crop = db.Column(db.String(255), nullable=False)
     unit = db.Column(db.String(255), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
-    harvest_quantity = db.Column(db.Integer, nullable=False)
     time_to_harvest = db.Column(db.DateTime, nullable=False)
     harvest_duration = db.Column(db.Integer, nullable=False)
     expected_yield = db.Column(db.Integer, nullable=False)
+
+    def __repr__(self):
+        return "<User '{}'>".format(self.name)

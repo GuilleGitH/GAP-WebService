@@ -6,14 +6,13 @@ class SowingFormDto:
         'sowing_form', description='sowing_form related operations')
     sowing_form = api.model('sowing_form', {
         'date': fields.Date(required=True, description='partial form'),
-        'time': fields.DateTime(required=True, description='partial form'),
         'plot': fields.Integer(required=True, description='partial form'),
         'crop': fields.String(required=True, description='partial form'),
         'quantity': fields.Integer(required=True, description='partial form'),
         'time_to_harvest': fields.String(required=True, description='partial form'),
         'harvest_duration': fields.String(required=True, description='partial form'),
         'expected_yield': fields.String(required=True, description='partial form'),
-        'note': fields.String(required=True, description='partial form'),
+        'unit': fields.String(required=True, description='partial form'),
     })
 
     sowing_form_field_based = api.model('sowing_form_field_based', {

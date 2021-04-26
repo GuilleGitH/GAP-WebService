@@ -11,7 +11,7 @@ _issue_form_field_based = IssueFormDto.issue_form_field_based
 
 
 @api.route('/')
-class SowingForm(Resource):
+class IssueForm(Resource):
     @api.response(201, 'Prediction complete.')
     @api.doc('make sowing form prediction on all fields')
     @api.expect(_issue_form, validate=True)

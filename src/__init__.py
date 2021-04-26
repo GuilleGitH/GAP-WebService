@@ -2,6 +2,7 @@ from flask_restx import Api
 from flask import Blueprint
 
 from .main.controller.sowing_form_controller import api as sowing_form_ns
+from .data.controller.sowing_form_controller import api as sowing_sql
 from .main.controller.harvesting_form_controller import api as harvest_form_ns
 from .main.controller.issue_form_controller import api as issue_form_ns
 from .data.controller.issue_form_controller import api as issue_sql
@@ -16,6 +17,7 @@ api = Api(blueprint,
           )
 
 api.add_namespace(sowing_form_ns, path='/sowing_form')
+api.add_namespace(sowing_sql, path='/sowing_sql')
 api.add_namespace(harvest_form_ns, path='/harvesting_form')
 api.add_namespace(issue_form_ns, path='/issue_form')
 api.add_namespace(issue_sql, path='/issue_sql')
