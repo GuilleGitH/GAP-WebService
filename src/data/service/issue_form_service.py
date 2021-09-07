@@ -3,7 +3,7 @@ import datetime
 
 from src.data import db
 from src.data.model.issue import Issue
-from src.data.model.density import Density 
+
 
 
 

@@ -21,4 +21,4 @@ class SowingForm(Form):
             'all': self.predictor.predict_complete_form
         }
         func = switcher.get(field, lambda: "Invalid month")
-        return func()
+        return func(form=self)
