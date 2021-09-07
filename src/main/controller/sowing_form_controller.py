@@ -28,4 +28,4 @@ class SowingForm(Resource):
     def post(self):
         """Predicts specific fields based on form received"""
         data = request.json
-        return complete_prediction(data['field_required'])
+        return complete_prediction(data['sowing_form'], data['field_required'])

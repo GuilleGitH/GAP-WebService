@@ -5,7 +5,8 @@ from src.main import db
 from src.main.model.sowing_form import SowingForm
 
 
-def complete_prediction(field):
-    sowingForm = SowingForm("date", "time", "plot", "note", "lechuga", "quantity", "dose", "machine", "expected_yield")
-    response = sowingForm.makePrediction(field)
+def complete_prediction(data, field_required):
+    print(data)
+    sowingForm = SowingForm(data['date'], 'asd', data['plot'], 'asdad', data['crop'], data['quantity'], data['time_to_harvest'], data['harvest_duration'], data['expected_yield'], data['unit'])
+    response = sowingForm.makePrediction(field_required)
     return response, 200
